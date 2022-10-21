@@ -5,26 +5,30 @@ export default function Main() {
     const[taskname, settaskname]=useState('');
     const[tasklist, settasklist]=useState([]);
 
-// console.log(taskname);
-
-function addtask () {
-console.log(taskname);
-    settasklist([...tasklist, taskname])
+const addtask = () => {
+    return (settasklist([...tasklist, taskname]))
 }
 
-function deletetask(index){
-    console.log(index);
-}
 
-const tasklistcontent = tasklist.map((task, index)=>{
+let tasklistcontent = tasklist.map((task, index)=>{
     return(
-        <div>
-            <br />
-            {task}
-            <i class="fa fa-trash-alt" onClick={deletetask(index)}></i>
-         </div>
+    <div>
+        <li key={index}>
+        {task}
+        </li>
+        <i className="far fa-trash-alt" onClick={()=>deletetask(index)}></i>
+    </div>
     )
 })
+
+
+const deletetask = (index) => {
+    let duparray = [...tasklist];
+    duparray.splice(index, 1);
+    settasklist(duparray);
+}
+
+
 
 
 return (
@@ -42,12 +46,11 @@ return (
                 <button
                 className='btn btn-success'
                 onClick={addtask}
-                >
-                    ADD
+                > ADD
                 </button>
-                <p>
+                <ul>
                 {tasklistcontent}
-                </p>
+                </ul>
 
 
             </div>
@@ -55,4 +58,7 @@ return (
 
     </div>
   )
+
+
+
 }

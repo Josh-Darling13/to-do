@@ -24,7 +24,7 @@ h1{
   font-weight: bold !important;
 }
 
-p{
+p span{
   color: green;
   font-weight: bold;
   display: inline !important;
