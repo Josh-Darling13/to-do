@@ -24,14 +24,25 @@ h1{
   font-weight: bold !important;
 }
 
+p{
+  color: green;
+  font-weight: bold;
+  display: inline !important;
+  margin: 15px;
+}
+
 input{
   display: inline !important;
   border: 2px solid black;
   border-radius: 5px;
-  margin: 10px !important;
+  margin-bottom: 20px !important;
   width: 70% !important;
 }
 
 button{
   margin-left: 20px !important;
+}
+
+i{
+  color: red;
 }
