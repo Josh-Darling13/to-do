@@ -43,6 +43,25 @@ button{
   margin-left: 20px !important;
 }
 
-i{
+#trash{
   color: red;
+}
+
+#arrow{
+  color: green;
+}
+
+li{
+
+  list-style: none;
+
+
+}
+
+.to-do-items{
+  margin: 0, 20px !important;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 
 export default function Main() {
 
@@ -6,30 +6,29 @@ export default function Main() {
     const[tasklist, settasklist]=useState([]);
 
 const addtask = () => {
-    return (settasklist([...tasklist, taskname]))
-}
+    return (
 
+        settasklist([...tasklist, taskname])
+        )
+}
 
 let tasklistcontent = tasklist.map((task, index)=>{
     return(
-    <div>
+    <div class="to-do-items">
+        <i className="fa-sharp fa-solid fa-arrow-right" id='arrow'></i>
         <li key={index}>
         {task}
         </li>
-        <i className="far fa-trash-alt" onClick={()=>deletetask(index)}></i>
+        <i className="far fa-trash-alt" id='trash' onClick={()=>deletetask(index)}></i>
     </div>
     )
 })
-
 
 const deletetask = (index) => {
     let duparray = [...tasklist];
     duparray.splice(index, 1);
     settasklist(duparray);
 }
-
-
-
 
 return (
     <div>
@@ -41,6 +40,7 @@ return (
                 placeholder='enter task'
                 className='form-control'
                 value={taskname}
+                id='main-form'
                 onChange={(e)=>{settaskname(e.target.value)}}
                 />
                 <button
@@ -51,14 +51,9 @@ return (
                 <ul>
                 {tasklistcontent}
                 </ul>
-
-
             </div>
         </div>
 
     </div>
   )
-
-
-
 }
